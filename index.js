@@ -36,6 +36,11 @@ function addData() {
     cannotAdd = true;
   }
 
+  if(cannotAdd) {
+    window.alert(message);
+    return 
+  }
+
   cellDate.innerHTML = dateData.value;
   cellCategory.innerHTML = categoryData.options[categoryData.selectedIndex].text;
   cellItem.innerHTML = itemData.value;
