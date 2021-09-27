@@ -1,3 +1,4 @@
+
 function addEvent(id, eventType, fn) {
   document.getElementById(id).addEventListener(eventType, fn);
 }
@@ -19,12 +20,29 @@ function addData() {
   const categoryData = document.getElementById('category');
   const itemData = document.getElementById('item');
   const amountData = document.getElementById('amount');
-  
+
+  let message = '';
+  let cannotAdd = false;
+  if(dateData.value == null || dateData.value == undefined) {
+    message += 'date is null\n';
+    cannotAdd = true;
+  }
+  if(itemData.value == null || itemData.value == undefined) {
+    message += 'item is null\n';
+    cannotAdd = true;
+  }
+  if(amountData.value == null || amountData.value == undefined) {
+    message += 'amount is null\n';
+    cannotAdd = true;
+  }
+
   cellDate.innerHTML = dateData.value;
   cellCategory.innerHTML = categoryData.options[categoryData.selectedIndex].text;
   cellItem.innerHTML = itemData.value;
   cellAmount.innerHTML = amountData.value;
   cellDelete.innerHTML = 'aaa';
+
+
 
 }
 
