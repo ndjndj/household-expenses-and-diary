@@ -15,10 +15,15 @@ function addData() {
   let cellAmount = row.insertCell(3);
   let cellDelete = row.insertCell(4);
 
-  cellDate.innerHTML = document.getElementById('calendar').value;
-  cellCategory.innerHTML = document.getElementById('category').value;
-  cellItem.innerHTML = document.getElementById('item').value;
-  cellAmount.innerHTML = document.getElementById('amount').value;
+  const dateData = document.getElementById('calendar');
+  const categoryData = document.getElementById('category');
+  const itemData = document.getElementById('item');
+  const amountData = document.getElementById('amount');
+  
+  cellDate.innerHTML = dateData.value;
+  cellCategory.innerHTML = categoryData.options[categoryData.selectedIndex].text;
+  cellItem.innerHTML = itemData.value;
+  cellAmount.innerHTML = amountData.value;
   cellDelete.innerHTML = 'aaa';
 
 }
