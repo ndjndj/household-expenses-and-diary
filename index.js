@@ -27,5 +27,6 @@ window.addEventListener(
   'load',
   () => {
     addEvent('save', 'click', saveDatas);
+    addEvent('add', 'click', addData);
   }
 );
