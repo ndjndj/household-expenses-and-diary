@@ -9,6 +9,6 @@ function onClickSaveButton() {
 window.addEventListener(
   'load',
   () => {
-    document.getElementById('save').addEventListener()
+    addEvent('save', 'click', onClickSaveButton);
   }
 );
