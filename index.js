@@ -21,24 +21,27 @@ function addData() {
   const itemData = document.getElementById('item');
   const amountData = document.getElementById('amount');
 
+  console.log(dateData.value);
+  console.log(itemData.value);
+  console.log(amountData.value);
   let message = '';
   let cannotAdd = false;
-  if(dateData.value == null || dateData.value == undefined) {
+  if(!dateData.value) {
     message += 'date is null\n';
     cannotAdd = true;
   }
-  if(itemData.value == null || itemData.value == undefined) {
+  if(!itemData.value) {
     message += 'item is null\n';
     cannotAdd = true;
   }
-  if(amountData.value == null || amountData.value == undefined) {
+  if(!amountData.value) {
     message += 'amount is null\n';
     cannotAdd = true;
   }
 
   if(cannotAdd) {
     window.alert(message);
-    return 
+    return
   }
 
   cellDate.innerHTML = dateData.value;
