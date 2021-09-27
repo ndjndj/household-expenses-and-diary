@@ -5,6 +5,7 @@ function addEvent(id, eventType, fn) {
 
 function saveDatas() {
   const reply = confirm('save it?');
+  if(!reply) {return}
 }
 
 function addData() {
