@@ -2,14 +2,15 @@ function addEvent(id, eventType, fn) {
   document.getElementById(id).addEventListener(eventType, fn);
 }
 
-function doSave() {
+function saveDatas() {
   const reply = confirm('save it?');
 }
 
+function 
 
 window.addEventListener(
   'load',
   () => {
-    addEvent('save', 'click', doSave);
+    addEvent('save', 'click', saveDatas);
   }
 );
