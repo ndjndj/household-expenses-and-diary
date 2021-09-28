@@ -1,7 +1,8 @@
 
 function deleteRow(id) {
-  const delBtn = document.getElementById(id);
-  console.log(delBtn.parentNode.parentNode);
+  const _rowIndex = document.getElementById(id).parentNode.parentNode.rowIndex;
+  
+
 }
 
 function getUniqueString(strong=1000, initialString='') {
