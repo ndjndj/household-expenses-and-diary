@@ -1,8 +1,8 @@
 
 function deleteRow(id) {
   const _rowIndex = document.getElementById(id).parentNode.parentNode.rowIndex;
-  
-
+  const table = document.getElementById('data-table');
+  table.deleteRow(_rowIndex);
 }
 
 function getUniqueString(strong=1000, initialString='') {
