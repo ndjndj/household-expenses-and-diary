@@ -56,7 +56,7 @@ function addData() {
   cellCategory.innerHTML = categoryData.options[categoryData.selectedIndex].text;
   cellItem.innerHTML = itemData.value;
   cellAmount.innerHTML = amountData.value;
-  cellDelete.innerHTML = 'aaa';
+  createDelButton(cellDelete);
 
 
 
