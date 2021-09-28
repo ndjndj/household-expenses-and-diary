@@ -55,7 +55,7 @@ function addData() {
 
   const table = document.getElementById('data-table');
   let row = table.insertRow(-1);
-  row.id = getUniqueString();
+  row.id = getUniqueString(1000, 'tr-');
   let cellDate = row.insertCell(0);
   let cellCategory = row.insertCell(1);
   let cellItem = row.insertCell(2);
