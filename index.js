@@ -67,7 +67,10 @@ function addData() {
   let cellAmount = row.insertCell(3);
   let cellDelete = row.insertCell(4);
 
-  cellDate.innerHTML = dateData.value;
+  const dateInput = document.createElement('input');
+  dateInput.type = 'date';
+  dateInput.innerHTML = dateData.value
+  cellDate.appendChild(dateInput);
   cellCategory.innerHTML = categoryData.options[categoryData.selectedIndex].text;
   cellItem.innerHTML = itemData.value;
   cellAmount.innerHTML = amountData.value;
