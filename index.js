@@ -1,4 +1,9 @@
 
+function deleteRow() {
+
+}
+
+
 function createDelButton(parent) {
   const button = document.createElement('button');
   button.innerHTML = 'DELETE';
@@ -57,7 +62,7 @@ function addData() {
   cellItem.innerHTML = itemData.value;
   cellAmount.innerHTML = amountData.value;
   createDelButton(cellDelete);
-
+  console.log(new Date().getTime().toString(16));
 }
 
 window.addEventListener(
