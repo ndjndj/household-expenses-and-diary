@@ -1,6 +1,8 @@
 
 function createDelButton(parent) {
   const button = document.createElement('button');
+  button.innerHTML = 'DELETE';
+  parent.appendChild(button);
 }
 
 function addEvent(id, eventType, fn) {
