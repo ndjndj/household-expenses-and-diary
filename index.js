@@ -58,8 +58,6 @@ function addData() {
   cellAmount.innerHTML = amountData.value;
   createDelButton(cellDelete);
 
-
-
 }
 
 window.addEventListener(
