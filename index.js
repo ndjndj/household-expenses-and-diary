@@ -76,7 +76,7 @@ function addData() {
   const itemInput = document.createElement('input');
   itemInput.text = 'text';
   itemInput.value = itemData.value;
-  cellItem.appendChild(cellInput);
+  cellItem.appendChild(itemInput);
 
   const amountInput = document.createElement('input');
   amountInput.type = 'number';
