@@ -10,7 +10,7 @@ function getUniqueString(strong=1000, initialString='') {
 function createDelButton(parent) {
   const button = document.createElement('button');
   button.innerHTML = 'DELETE';
-  button.id = getUniqueString(1000, )
+  button.id = getUniqueString(undefined, 'delete-button-');
   parent.appendChild(button);
 }
 
