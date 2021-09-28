@@ -69,7 +69,7 @@ function addData() {
 
   const dateInput = document.createElement('input');
   dateInput.type = 'date';
-  dateInput.innerHTML = dateData.value
+  dateInput.value = dateData.value;
   cellDate.appendChild(dateInput);
   cellCategory.innerHTML = categoryData.options[categoryData.selectedIndex].text;
   cellItem.innerHTML = itemData.value;
