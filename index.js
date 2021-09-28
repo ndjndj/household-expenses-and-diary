@@ -3,6 +3,9 @@ function deleteRow() {
 
 }
 
+function getUniqueString(strong=1000) {
+  return new Date().getTime().toString(16) + Math.floor(strong * Math.random()).toString(16);
+}
 
 function createDelButton(parent) {
   const button = document.createElement('button');
@@ -62,7 +65,7 @@ function addData() {
   cellItem.innerHTML = itemData.value;
   cellAmount.innerHTML = amountData.value;
   createDelButton(cellDelete);
-  console.log(new Date().getTime().toString(16));
+
 }
 
 window.addEventListener(
