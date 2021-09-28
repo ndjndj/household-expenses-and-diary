@@ -1,4 +1,8 @@
 
+function createDelButton(parent) {
+  const button = document.createElement('button');
+}
+
 function addEvent(id, eventType, fn) {
   document.getElementById(id).addEventListener(eventType, fn);
 }
