@@ -1,6 +1,7 @@
 
-function deleteRow() {
-
+function deleteRow(id) {
+  const delBtn = document.getElementById(id);
+  console.log(delBtn.parentNode.parentNode);
 }
 
 function getUniqueString(strong=1000, initialString='') {
@@ -12,6 +13,7 @@ function createDelButton(parent) {
   button.innerHTML = 'DELETE';
   button.id = getUniqueString(undefined, 'delete-button-');
   parent.appendChild(button);
+  addEvent(button.id, 'click', function() {deleteRow(this.id)});
 }
 
 function addEvent(id, eventType, fn) {
