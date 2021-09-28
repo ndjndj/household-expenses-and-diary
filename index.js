@@ -74,12 +74,12 @@ function addData() {
 
   cellCategory.innerHTML = categoryData.options[categoryData.selectedIndex].text;
 
-  const cellInput = document.createElement('input');
-  cellInput.text = 'text';
-  cellInput.value = itemData.value;
+  const itemInput = document.createElement('input');
+  itemInput.text = 'text';
+  itemInput.value = itemData.value;
   cellItem.appendChild(cellInput);
 
-  
+
   cellAmount.innerHTML = amountData.value;
   createDelButton(cellDelete);
 
