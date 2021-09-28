@@ -10,7 +10,7 @@ function getUniqueString(strong=1000, initialString='') {
 function createDelButton(parent) {
   const button = document.createElement('button');
   button.innerHTML = 'DELETE';
-
+  button.id = getUniqueString(1000, )
   parent.appendChild(button);
 }
 
@@ -55,7 +55,7 @@ function addData() {
 
   const table = document.getElementById('data-table');
   let row = table.insertRow(-1);
-  row.id = getUniqueString(1000, 'tr-');
+  row.id = getUniqueString(undefined, 'tr-');
   let cellDate = row.insertCell(0);
   let cellCategory = row.insertCell(1);
   let cellItem = row.insertCell(2);
