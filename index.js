@@ -1,3 +1,4 @@
+const { link } = require("fs");
 
 function deleteRow(id) {
   const isNotDelete = !confirm('delete it?');
@@ -79,8 +80,11 @@ function addData() {
   itemInput.value = itemData.value;
   cellItem.appendChild(cellInput);
 
-
-  cellAmount.innerHTML = amountData.value;
+  const amountInput = document.createElement('input');
+  amountInput.type = 'number';
+  amountInput.value = amountData.value;
+  cellAmount.appendChild(amountInput);
+  
   createDelButton(cellDelete);
 
 }
