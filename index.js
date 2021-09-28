@@ -71,8 +71,15 @@ function addData() {
   dateInput.type = 'date';
   dateInput.value = dateData.value;
   cellDate.appendChild(dateInput);
+
   cellCategory.innerHTML = categoryData.options[categoryData.selectedIndex].text;
-  cellItem.innerHTML = itemData.value;
+
+  const cellInput = document.createElement('input');
+  cellInput.text = 'text';
+  cellInput.value = itemData.value;
+  cellItem.appendChild(cellInput);
+
+  
   cellAmount.innerHTML = amountData.value;
   createDelButton(cellDelete);
 
