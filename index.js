@@ -1,5 +1,7 @@
 
 function deleteRow(id) {
+  const isNotDelete = !confirm('delete it?');
+  if(isNotDelete){ return }
   const _rowIndex = document.getElementById(id).parentNode.parentNode.rowIndex;
   const table = document.getElementById('data-table');
   table.deleteRow(_rowIndex);
