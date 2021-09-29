@@ -1,4 +1,5 @@
 function checkLoginValidation() {
+    
     return
 }
 
@@ -9,6 +10,6 @@ function addEvent(id, eventType, fn) {
 document.addEventListener(
     'load',
     () => {
-
+        addEvent('submit-login', 'submit', checkLoginValidation);
     }
 );
