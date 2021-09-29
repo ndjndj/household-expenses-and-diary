@@ -34,9 +34,6 @@ function addData() {
   const itemData = document.getElementById('item');
   const amountData = document.getElementById('amount');
 
-  console.log(dateData.value);
-  console.log(itemData.value);
-  console.log(amountData.value);
   let message = '';
   let cannotAdd = false;
   if(!dateData.value) {
