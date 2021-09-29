@@ -1,15 +1,14 @@
 function checkLoginValidation() {
-    
-    return
+    window.alert('test');
 }
 
 function addEvent(id, eventType, fn) {
     document.getElementById(id).addEventListener(eventType, fn);
   }
 
-document.addEventListener(
+window.addEventListener(
     'load',
     () => {
-        addEvent('submit-login', 'submit', checkLoginValidation);
+        addEvent('submit-login', 'click', checkLoginValidation);
     }
 );
