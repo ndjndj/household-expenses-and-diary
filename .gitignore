@@ -104,4 +104,4 @@ dist
 .tern-port
 
 # DB infomation
-./head-api/db/
+head-api/db/
