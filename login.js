@@ -1,5 +1,5 @@
 function checkLoginValidation() {
-    window.alert('test');
+    
 }
 
 function addEvent(id, eventType, fn) {
