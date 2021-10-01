@@ -18,3 +18,15 @@ router.get(
         );
     }
 );
+
+router.post(
+    '/',
+    function(req, res, next) {
+        console.log(req.body);
+        res.json({
+            id: req.body.memo.id,
+            text: req.body.memo.text
+        });
+    }
+);
+
