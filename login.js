@@ -1,5 +1,5 @@
 function checkLoginValidation() {
-    
+
 }
 
 function addEvent(id, eventType, fn) {
@@ -12,3 +12,4 @@ window.addEventListener(
         addEvent('submit-login', 'click', checkLoginValidation);
     }
 );
+
