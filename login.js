@@ -12,4 +12,3 @@ window.addEventListener(
         addEvent('submit-login', 'click', checkLoginValidation);
     }
 );
-
