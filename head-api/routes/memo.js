@@ -9,7 +9,7 @@ router.get(
         pool.query(
             'SELECT * FROM memo',
             function(error, results) {
-                if (error) { throw error; }
+                if(error) { throw error; }
 
                 res.status(200).json({
                     data: results.rows
@@ -22,11 +22,20 @@ router.get(
 router.post(
     '/',
     function(req, res, next) {
-        console.log(req.body);
-        res.json({
-            id: req.body.memo.id,
-            text: req.body.memo.text
-        });
+        const {title, text} = req.body.memo;
+
+        pool.query(
+            'INSERT INTO memo(title, text) VALUES ($1, $2)',
+            [title, text],
+            function(error, results) {
+                if(error) { throw error; }
+
+                res.status(201).json({
+                    status: 'success'
+                });
+            }
+        );
+
     }
 );
 
