@@ -65,23 +65,12 @@ function addData() {
   let cellAmount = row.insertCell(3);
   let cellDelete = row.insertCell(4);
 
-  const dateInput = document.createElement('input');
-  dateInput.type = 'date';
-  dateInput.value = dateData.value;
-  cellDate.appendChild(dateInput);
+  createAndAppendChild('input', cellDate, {'type': 'date', 'value': dateData.value});
+  createAndAppendChild('input', cellItem, {'type': 'text', 'value': itemData.value});
+  createAndAppendChild('input', cellAmount, {'type': 'number', 'value': amountData.value});
 
   cellCategory.innerHTML = categoryData.options[categoryData.selectedIndex].text;
-
-  const itemInput = document.createElement('input');
-  itemInput.text = 'text';
-  itemInput.value = itemData.value;
-  cellItem.appendChild(itemInput);
-
-  const amountInput = document.createElement('input');
-  amountInput.type = 'number';
-  amountInput.value = amountData.value;
-  cellAmount.appendChild(amountInput);
-
+  
   createDelButton(cellDelete);
 
 }
