@@ -31,6 +31,13 @@ function checkValidation(condition, errorRetVal, validRetVal) {
   return condition ? errorRetVal : validRetVal
 }
 
+function createAndAppendChild(elem, parent, optHash) {
+  const item = document.createElement(elem);
+  for (var key in optHash) {
+    item[key] = optHash[key]
+  }
+  parent.appendChild(item);
+}
 function addData() {
 
   const dateData = document.getElementById('calendar');
