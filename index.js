@@ -27,6 +27,10 @@ function saveDatas() {
   if(!reply) {return}
 }
 
+function checkValidation() {
+
+}
+
 function addData() {
 
   const dateData = document.getElementById('calendar');
