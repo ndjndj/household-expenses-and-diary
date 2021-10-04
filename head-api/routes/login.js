@@ -10,11 +10,11 @@ router.post(
 
         pool.query(
             'SELECT ' +
-            '    id, user_name, password ' +
-            'FROM head_users WHERE ($1, $2)',
+            '    id, user_id, user_name ' +
+            'FROM head_users WHERE user_id = $1 AND password =  $2',
             [user_id, pass],
             function(error, results) {
-                if(error) { throw error }
+                if(error) { throw error; }
                 console.log(results.rows);
             }
         );
