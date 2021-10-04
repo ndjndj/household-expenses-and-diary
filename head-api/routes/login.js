@@ -3,7 +3,16 @@ const router = express.Router();
 
 const pool = require('../db/pool');
 
-router.post();
+router.post(
+    '/',
+    function(req, res, next) {
+        const {id, pass} = req.body.user;
+
+        pool.query(
+            
+        );
+    }
+);
 
 
 module.exports = router
