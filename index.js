@@ -27,6 +27,17 @@ function saveDatas() {
   if(!reply) {return}
 }
 
+function checkValidation(condition, errorRetVal, validRetVal) {
+  return condition ? errorRetVal : validRetVal
+}
+
+function createAndAppendChild(elem, parent, optHash) {
+  const item = document.createElement(elem);
+  for (var key in optHash) {
+    item[key] = optHash[key]
+  }
+  parent.appendChild(item);
+}
 function addData() {
 
   const dateData = document.getElementById('calendar');
@@ -34,22 +45,13 @@ function addData() {
   const itemData = document.getElementById('item');
   const amountData = document.getElementById('amount');
 
-  let message = '';
-  let cannotAdd = false;
-  if(!dateData.value) {
-    message += 'date is null\n';
-    cannotAdd = true;
-  }
-  if(!itemData.value) {
-    message += 'item is null\n';
-    cannotAdd = true;
-  }
-  if(!amountData.value) {
-    message += 'amount is null\n';
-    cannotAdd = true;
-  }
+  //バリデーションチェック
+  let message = '';  
+  message += checkValidation(!dateData.value, 'date is null\n', '');
+  message += checkValidation(!itemData.value, 'item is null\n', '');
+  message += checkValidation(!amountData.value, 'amount is null\n', '');
 
-  if(cannotAdd) {
+  if(message != '') {
     window.alert(message);
     return
   }
@@ -63,23 +65,12 @@ function addData() {
   let cellAmount = row.insertCell(3);
   let cellDelete = row.insertCell(4);
 
-  const dateInput = document.createElement('input');
-  dateInput.type = 'date';
-  dateInput.value = dateData.value;
-  cellDate.appendChild(dateInput);
+  createAndAppendChild('input', cellDate, {'type': 'date', 'value': dateData.value});
+  createAndAppendChild('input', cellItem, {'type': 'text', 'value': itemData.value});
+  createAndAppendChild('input', cellAmount, {'type': 'number', 'value': amountData.value});
 
   cellCategory.innerHTML = categoryData.options[categoryData.selectedIndex].text;
-
-  const itemInput = document.createElement('input');
-  itemInput.text = 'text';
-  itemInput.value = itemData.value;
-  cellItem.appendChild(itemInput);
-
-  const amountInput = document.createElement('input');
-  amountInput.type = 'number';
-  amountInput.value = amountData.value;
-  cellAmount.appendChild(amountInput);
-
+  
   createDelButton(cellDelete);
 
 }
