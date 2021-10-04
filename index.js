@@ -27,8 +27,8 @@ function saveDatas() {
   if(!reply) {return}
 }
 
-function checkValidation() {
-
+function checkValidation(condition, errorRetVal, validRetVal) {
+  return condition ? errorRetVal : validRetVal
 }
 
 function addData() {
@@ -38,22 +38,13 @@ function addData() {
   const itemData = document.getElementById('item');
   const amountData = document.getElementById('amount');
 
-  let message = '';
-  let cannotAdd = false;
-  if(!dateData.value) {
-    message += 'date is null\n';
-    cannotAdd = true;
-  }
-  if(!itemData.value) {
-    message += 'item is null\n';
-    cannotAdd = true;
-  }
-  if(!amountData.value) {
-    message += 'amount is null\n';
-    cannotAdd = true;
-  }
+  //バリデーションチェック
+  let message = '';  
+  message += checkValidation(!dateData.value, 'date is null\n', '');
+  message += checkValidation(!itemData.value, 'item is null\n', '');
+  message += checkValidation(!amountData.value, 'amount is null\n', '');
 
-  if(cannotAdd) {
+  if(message != '') {
     window.alert(message);
     return
   }
