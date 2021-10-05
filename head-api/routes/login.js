@@ -18,8 +18,8 @@ router.post(
                 if(error) { throw error; }
 
                 let message = '';
-
-                if(results.rows) {
+                
+                if(results.rows.length) {
                     message = `Hi ${results.rows[0]['user_name']}`;
                 } else {
                     message = 'failed';
@@ -30,7 +30,7 @@ router.post(
                     message:message,
                     data: results.rows
                 });
-                
+
             }
         );
     }
