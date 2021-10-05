@@ -1,3 +1,4 @@
+const e = require('express');
 const express = require('express');
 const router = express.Router();
 
@@ -15,10 +16,21 @@ router.post(
             [user_id, password],
             function(error, results) {
                 if(error) { throw error; }
+
+                let message = '';
+
+                if(results.rows) {
+                    message = `Hi ${results.rows[0]['user_name']}`;
+                } else {
+                    message = 'failed';
+                }
+
                 res.status(201).json({
                     status: 'success',
+                    message:message,
                     data: results.rows
                 });
+                
             }
         );
     }
