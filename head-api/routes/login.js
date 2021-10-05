@@ -7,7 +7,7 @@ router.post(
     '/',
     function(req, res, next) {
         const {user_id, password} = req.body.user;
-        console.log(user_id, password);
+
         pool.query(
             'SELECT ' +
             '    id, user_id, user_name ' +
@@ -15,7 +15,10 @@ router.post(
             [user_id, password],
             function(error, results) {
                 if(error) { throw error; }
-                console.log(results.rows);
+                res.status(201).json({
+                    status: 'success',
+                    data: results.rows
+                });
             }
         );
     }
