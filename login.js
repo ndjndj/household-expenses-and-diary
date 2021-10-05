@@ -1,4 +1,12 @@
 function checkLoginValidation() {
+    axios.post(
+        'http://localhost:3000/login',
+        {"user": {
+            "user_id": "init_id",
+            "password": "init_pass"
+            }
+        }
+    );
 
 }
 
@@ -12,4 +20,3 @@ window.addEventListener(
         addEvent('submit-login', 'click', checkLoginValidation);
     }
 );
-
