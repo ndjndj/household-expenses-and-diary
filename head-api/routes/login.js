@@ -39,12 +39,13 @@ router.post(
     '/create_user',
     function(req, res, next) {
         const {user_id, user_name, password} = req.body.user;
-
+        console.log('create_user');
         pool.query(
             'SELECT user_id FROM head_users WHERE user_id = $1',
             [user_id],
             function(error, results) {
-                if(results.rows) {
+                console.log(results.rows);
+                if(results.rows.length) {
                     console.log('users exists already');
                     return;
                 }
