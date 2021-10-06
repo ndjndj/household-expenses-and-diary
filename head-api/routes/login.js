@@ -45,7 +45,23 @@ router.post(
             'SELECT user_id FROM head_users WHERE user_id = $1',
             [user_id],
             function(error, results) {
-                if(results.rows) { console.log('users exists already'); }
+                if(results.rows) {
+                    console.log('users exists already');
+                    return;
+                }
+
+                pool.query(
+                    'INSERT INTO head_users(user_id, user_name, password)'  +
+                    '   VALUES($1, $2, $3)',
+                    [user_id, user_name, password],
+                    function(error, results) {
+                        if(error) { throw error; }
+                        res.status(201).json({
+                            status: 'success'
+                        });
+                    }
+                );
+
             }
         );
 
