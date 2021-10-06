@@ -18,7 +18,7 @@ router.post(
                 if(error) { throw error; }
 
                 let message = '';
-                
+
                 if(results.rows.length) {
                     message = `Hi ${results.rows[0]['user_name']}`;
                 } else {
@@ -36,5 +36,12 @@ router.post(
     }
 );
 
+router.post(
+    '/create_user',
+    function(req, res, next) {
 
-module.exports = router
+    }
+);
+
+
+module.exports = router;
