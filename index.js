@@ -25,6 +25,13 @@ function addEvent(id, eventType, fn) {
 function saveDatas() {
   const reply = confirm('save it?');
   if(!reply) {return}
+
+  const table = document.getElementById('data-table');
+  const datas = table.childNodes;
+  console.log(datas);
+
+
+
 }
 
 function checkValidation(condition, errorRetVal, validRetVal) {
@@ -46,7 +53,7 @@ function addData() {
   const amountData = document.getElementById('amount');
 
   //バリデーションチェック
-  let message = '';  
+  let message = '';
   message += checkValidation(!dateData.value, 'date is null\n', '');
   message += checkValidation(!itemData.value, 'item is null\n', '');
   message += checkValidation(!amountData.value, 'amount is null\n', '');
@@ -70,7 +77,7 @@ function addData() {
   createAndAppendChild('input', cellAmount, {'type': 'number', 'value': amountData.value});
 
   cellCategory.innerHTML = categoryData.options[categoryData.selectedIndex].text;
-  
+
   createDelButton(cellDelete);
 
 }
