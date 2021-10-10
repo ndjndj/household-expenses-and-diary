@@ -10,3 +10,4 @@ const getUniqueString = (strong=1000, initialString='') => {
 }
 
 module.exports = addEvent;
+module.exports = getUniqueString;
