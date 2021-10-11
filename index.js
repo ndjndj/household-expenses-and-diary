@@ -27,7 +27,7 @@ function saveDatas() {
   if(!reply) {return}
 
   const table = document.getElementById('data-table');
-  const datas = table.childNodes;
+  const datas = table.rows;
   console.log(datas);
 
 
