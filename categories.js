@@ -2,6 +2,14 @@ function checkValidation(condition, errorRetVal, validRetVal) {
     return condition ? errorRetVal : validRetVal
  }
 
+function deleteRow(id) {
+    const isNotDelete = !confirm('delete it?');
+    if(isNotDelete){ return }
+    const _rowIndex = document.getElementById(id).parentNode.parentNode.rowIndex;
+    const table = document.getElementById('data-table');
+    table.deleteRow(_rowIndex);
+ }
+
 function getUniqueString(strong=1000, initialString='') {
     return initialString + new Date().getTime().toString(16) + Math.floor(strong * Math.random()).toString(16);
 }
