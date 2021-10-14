@@ -22,6 +22,9 @@ function createDelButton(parent) {
     addEvent(button.id, 'click', function() {deleteRow(this.id)});
   }
 
+ function addEvent(id, eventType, fn) {
+    document.getElementById(id).addEventListener(eventType, fn);
+}
 
 function addData() {
     const seqData = document.getElementById('seq');
@@ -48,3 +51,10 @@ function addData() {
     createAndAppendChild('input', cellCategory, {'type': 'delete', 'value': categoryData.value});
     createDelButton(cellDelete);
 }
+
+window.addEventListener(
+    'load',
+    () => {
+        addEven
+    }
+);
