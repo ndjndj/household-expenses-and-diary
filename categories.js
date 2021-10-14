@@ -63,6 +63,6 @@ function addData() {
 window.addEventListener(
     'load',
     () => {
-        addEven
+        addEvent('add', 'click', addData);
     }
 );
