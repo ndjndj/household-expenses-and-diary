@@ -14,6 +14,7 @@ function createAndAppendChild(elem, parent, optHash) {
     parent.appendChild(item);
 }
 
+
 function addData() {
     const seqData = document.getElementById('seq');
     const categoryData = document.getElementById('category');
@@ -35,4 +36,6 @@ function addData() {
     let cellCategory = row.insertCell(1);
     let cellDelete = row.insertCell(2);
 
+    createAndAppendChild('input', cellSeq, {'type': 'number', 'value': seqData.value});
+    createAndAppendChild('input', cellCategory, {'type': 'delete', 'value': categoryData.value});
 }
