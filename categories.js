@@ -6,6 +6,14 @@ function getUniqueString(strong=1000, initialString='') {
     return initialString + new Date().getTime().toString(16) + Math.floor(strong * Math.random()).toString(16);
 }
 
+function createAndAppendChild(elem, parent, optHash) {
+    const item = document.createElement(elem);
+    for (var key in optHash) {
+      item[key] = optHash[key]
+    }
+    parent.appendChild(item);
+}
+
 function addData() {
     const seqData = document.getElementById('seq');
     const categoryData = document.getElementById('category');
@@ -22,5 +30,9 @@ function addData() {
 
     const table = document.getElementById('data-table');
     let row = table.insertRow(-1);
-    row.id =
+    row.id = getUniqueString(undefined, 'tr-');
+    let cellSeq = row.insertCell(0);
+    let cellCategory = row.insertCell(1);
+    let cellDelete = row.insertCell(2);
+
 }
