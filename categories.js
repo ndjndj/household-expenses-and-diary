@@ -14,6 +14,14 @@ function createAndAppendChild(elem, parent, optHash) {
     parent.appendChild(item);
 }
 
+function createDelButton(parent) {
+    const button = document.createElement('button');
+    button.innerHTML = 'DELETE';
+    button.id = getUniqueString(undefined, 'delete-button-');
+    parent.appendChild(button);
+    addEvent(button.id, 'click', function() {deleteRow(this.id)});
+  }
+
 
 function addData() {
     const seqData = document.getElementById('seq');
