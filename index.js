@@ -34,8 +34,8 @@ function saveDatas() {
 
 }
 
-function checkValidation(condition, errorRetVal, validRetVal) {
-  return condition ? errorRetVal : validRetVal
+function checkValidation(condition, validRetVal, errorRetVal) {
+  return condition ? validRetVal : errorRetVal
 }
 
 function createAndAppendChild(elem, parent, optHash) {
@@ -54,9 +54,9 @@ function addData() {
 
   //バリデーションチェック
   let message = '';
-  message += checkValidation(!dateData.value, 'date is null\n', '');
-  message += checkValidation(!itemData.value, 'item is null\n', '');
-  message += checkValidation(!amountData.value, 'amount is null\n', '');
+  message += checkValidation(dateData.value, '', 'date is null\n');
+  message += checkValidation(itemData.value, '', 'item is null\n');
+  message += checkValidation(amountData.value, '', 'amount is null\n');
 
   if(message != '') {
     window.alert(message);
