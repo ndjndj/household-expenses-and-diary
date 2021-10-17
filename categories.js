@@ -69,7 +69,27 @@ function saveData() {
     //get category datas.
     const table = document.getElementById('data-table');
     const datas = table.rows;
-    console.log(datas);
+    let categories = {'data': []};
+    //exclude header row.
+    let tmpArray;
+    let shouldGetTag = ['INPUT', 'SELECT'];
+    let childElem;
+    for(var i=1; i < datas.length; i++) {
+        tmpArray = [];
+        for(var j=0; j < datas[i].cells.length; j++) {
+            childElem = datas[i].cells[j].firstElementChild;
+            console.log(childElem);
+            if (shouldGetTag.some(item => item == childElem.tagName)) {
+                tmpArray.push(childElem.value);
+            }
+        }
+        categories['data'].push(tmpArray);
+    }
+
+    console.log(categories);
+
+
+
     return
 }
 
