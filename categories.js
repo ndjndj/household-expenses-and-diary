@@ -40,8 +40,8 @@ function addData() {
 
     //check validation
     let message = '';
-    message += checkValidation(!seqData, 'seq is null.\n', '');
-    message += checkValidation(!categoryData, 'category is null\n', '');
+    message += checkValidation(seqData.value, '', 'seq is null.\n');
+    message += checkValidation(categoryData.value, '', 'category is null\n');
 
     if (message != '') {
         window.alert(messsage);
