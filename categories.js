@@ -51,9 +51,11 @@ function addData() {
     const table = document.getElementById('data-table');
     let row = table.insertRow(-1);
     row.id = getUniqueString(undefined, 'tr-');
+    row.className = 'row';
     let cellSeq = row.insertCell(0);
     let cellCategory = row.insertCell(1);
     let cellDelete = row.insertCell(2);
+
 
     createAndAppendChild('input', cellSeq, {'type': 'number', 'value': seqData.value});
     createAndAppendChild('input', cellCategory, {'type': 'delete', 'value': categoryData.value});
