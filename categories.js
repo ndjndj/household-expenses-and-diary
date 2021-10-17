@@ -66,7 +66,10 @@ function saveData() {
     const reply = confirm('save it?');
     if(!reply) {return}
 
-    
+    //get category datas.
+    const table = document.getElementById('data-table');
+    const datas = table.rows;
+    console.log(datas);
     return
 }
 
@@ -74,5 +77,6 @@ window.addEventListener(
     'load',
     () => {
         addEvent('add', 'click', addData);
+        addEvent('save', 'click', saveData);
     }
 );
