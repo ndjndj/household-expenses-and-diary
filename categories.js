@@ -57,7 +57,7 @@ function addData() {
 
 
     createAndAppendChild('input', cellSeq, {'type': 'number', 'value': seqData.value});
-    createAndAppendChild('input', cellCategory, {'type': 'delete', 'value': categoryData.value});
+    createAndAppendChild('input', cellCategory, {'type': 'text', 'value': categoryData.value});
     createDelButton(cellDelete);
 }
 
