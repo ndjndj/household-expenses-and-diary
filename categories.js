@@ -88,8 +88,6 @@ function saveData() {
 
     console.log(categories);
 
-
-
     return
 }
 
