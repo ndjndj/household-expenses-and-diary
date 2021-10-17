@@ -61,6 +61,10 @@ function addData() {
     createDelButton(cellDelete);
 }
 
+function saveData() {
+    return
+}
+
 window.addEventListener(
     'load',
     () => {
