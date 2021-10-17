@@ -23,7 +23,8 @@ function createAndAppendChild(elem, parent, optHash) {
 }
 
 function createDelButton(parent) {
-    const button = document.createElement('button');
+    const button = document.createElement('input');
+    button.type = 'button';
     button.innerHTML = 'DELETE';
     button.id = getUniqueString(undefined, 'delete-button-');
     parent.appendChild(button);
