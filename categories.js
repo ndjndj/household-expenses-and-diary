@@ -1,5 +1,5 @@
 function checkValidation(condition, validRetVal, errorRetVal) {
-    return condition ? errorRetVal : validRetVal
+    return condition ? validRetVal : errorRetVal
  }
 
 function deleteRow(id) {
