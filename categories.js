@@ -1,4 +1,4 @@
-function checkValidation(condition, errorRetVal, validRetVal) {
+function checkValidation(condition, validRetVal, errorRetVal) {
     return condition ? errorRetVal : validRetVal
  }
 
@@ -23,8 +23,7 @@ function createAndAppendChild(elem, parent, optHash) {
 }
 
 function createDelButton(parent) {
-    const button = document.createElement('input');
-    button.type = 'button';
+    const button = document.createElement('button');
     button.innerHTML = 'DELETE';
     button.id = getUniqueString(undefined, 'delete-button-');
     parent.appendChild(button);
