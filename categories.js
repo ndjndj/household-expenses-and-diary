@@ -44,7 +44,7 @@ function addData() {
     message += checkValidation(categoryData.value, '', 'category is null\n');
 
     if (message != '') {
-        window.alert(messsage);
+        window.alert(message);
         return
     }
 
