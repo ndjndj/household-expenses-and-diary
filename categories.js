@@ -62,6 +62,11 @@ function addData() {
 }
 
 function saveData() {
+    //confirm post.
+    const reply = confirm('save it?');
+    if(!reply) {return}
+
+    
     return
 }
 
