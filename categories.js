@@ -91,6 +91,10 @@ function saveData() {
     return
 }
 
+function postData() {
+    return
+}
+
 window.addEventListener(
     'load',
     () => {
