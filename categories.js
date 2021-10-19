@@ -87,12 +87,27 @@ function saveData() {
     }
 
     console.log(categories);
-
+    postData(categories);
     return
 }
 
-function postData() {
-    return
+function postData(data) {
+    axios.post(
+        'http://localhost:3000/categories',
+        {"user": {
+            "user_id": "init_id",
+            "password": "init_pass"
+            },
+            "datas" : data
+        }
+    ).then(function(response) {
+        console.log(response);
+        return true;
+    }).catch(function(error) {
+        return false;
+    });
+
+    return false;
 }
 
 window.addEventListener(
