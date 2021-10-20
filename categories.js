@@ -75,7 +75,7 @@ function saveData() {
     let shouldGetTag = ['INPUT', 'SELECT'];
     let childElem;
     for(var i=1; i < datas.length; i++) {
-        tmpArray = [];
+        tmpArray = ['init_id'];
         for(var j=0; j < datas[i].cells.length; j++) {
             childElem = datas[i].cells[j].firstElementChild;
             console.log(childElem);
