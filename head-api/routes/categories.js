@@ -9,9 +9,9 @@ router.post(
     function(req, res, next) {
         const {user, datas} = req.body;
 
-        pool.query(
-
-
-        );
+        const sql = format('INSERT INTO head_categories (id, name) VALUES %L, datas');
+        console.log(sql);
     }
 );
+
+module.exports = router;
