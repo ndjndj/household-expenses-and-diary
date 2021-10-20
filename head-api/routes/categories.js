@@ -8,5 +8,9 @@ router.post(
     function(req, res, next) {
         const {user, datas} = req.body;
         
+        pool.query(
+
+
+        );
     }
 );
