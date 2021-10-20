@@ -8,8 +8,8 @@ router.post(
     '/',
     function(req, res, next) {
         const {user, datas} = req.body;
-
-        const sql = format('INSERT INTO head_categories (id, name) VALUES %L, datas');
+        console.log("func");
+        const sql = format('INSERT INTO head_categories (user_id, id, name) VALUES %L', datas['data']);
         console.log(sql);
     }
 );
