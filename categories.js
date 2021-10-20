@@ -87,6 +87,7 @@ function saveData() {
     }
 
     console.log(categories);
+    console.log('post');
     postData(categories);
     return
 }
