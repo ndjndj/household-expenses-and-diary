@@ -10,7 +10,9 @@ router.post(
         const {user, datas} = req.body;
         console.log("func");
         const sql = format('INSERT INTO head_categories (user_id, id, name) VALUES %L', datas['data']);
-        console.log(sql);
+        pool.query(sql, undefined, function(error, results) {
+            res.status(201).json({status: 'success'})
+        });
     }
 );
 
