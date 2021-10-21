@@ -9,11 +9,17 @@ router.post(
     function(req, res, next) {
         const {user, datas} = req.body;
         console.log("func");
-        const sql = format('DELETE FROM head_categories WHERE user_id = %I; INSERT INTO head_categories (user_id, id, name) VALUES %L', user.user_id, datas['data']);
+        const del = format('DELETE FROM head_categories WHERE user_id = %I;', user.user_id);
         console.log(sql);
-        pool.query(sql, [user.user_id], function(error, results) {
+        pool.query(del, [], function(error, results) {
             if(error) { throw error; }
-            res.status(201).json({status: 'success'})
+
+            const ins = format(
+                'INSERT INTO head_categories (user_id, id, name) VALUES %L', datas['data']
+            );
+            pool.query(ins, [], function(error, results) {
+                res.status(201).json({status: 'success'})
+            });
         });
     }
 );
