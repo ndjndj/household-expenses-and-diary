@@ -9,8 +9,8 @@ router.post(
     function(req, res, next) {
         const {user, datas} = req.body;
         console.log("func");
-        const del = format('DELETE FROM head_categories WHERE user_id = %I;', user.user_id);
-        console.log(sql);
+        const del = format('DELETE FROM head_categories WHERE user_id = %L;', user.user_id);
+        console.log(del);
         pool.query(del, [], function(error, results) {
             if(error) { throw error; }
 
