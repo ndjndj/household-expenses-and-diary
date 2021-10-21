@@ -96,7 +96,7 @@ function postData(data) {
     axios.post(
         'http://localhost:3000/categories',
         {"user": {
-            "user_id": "init_id",
+            "user_id": 1,
             "password": "init_pass"
             },
             "datas" : data
