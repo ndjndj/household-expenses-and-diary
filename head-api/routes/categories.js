@@ -29,7 +29,7 @@ router.get(
     function(req, res, next) {
         pool.query(
             'SELECT id, name FROM head_categories WHERE user_id = $1',
-            [user.user_id],
+            [req.body.user.user_id],
             function(error, results) {
                 if(error) {throw error;}
 
