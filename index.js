@@ -100,6 +100,7 @@ function loadCategories() {
 window.addEventListener(
   'load',
   () => {
+    loadCategories();
     addEvent('save', 'click', saveDatas);
     addEvent('add', 'click', addData);
   }
