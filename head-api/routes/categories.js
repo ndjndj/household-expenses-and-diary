@@ -25,7 +25,7 @@ router.post(
 );
 
 router.get(
-    '/',
+    '/get-category',
     function(req, res, next) {
         pool.query(
             'SELECT id, name FROM head_categories WHERE user_id = $1',
