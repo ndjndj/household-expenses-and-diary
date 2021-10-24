@@ -82,6 +82,10 @@ function addData() {
 
 }
 
+function loadCategories() {
+  
+}
+
 window.addEventListener(
   'load',
   () => {
