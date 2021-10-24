@@ -95,7 +95,7 @@ function loadCategories() {
     const category = document.getElementById("category");
     console.log(data);
     for(var i=0; i < data.length; i++) {
-      createAndAppendChild('optiont', category, {'value': data[i].id, 'text': data[i].name});
+      createAndAppendChild('option', category, {'value': data[i].id, 'text': data[i].name});
     }
   }).catch(function(error){
     console.log(error);
