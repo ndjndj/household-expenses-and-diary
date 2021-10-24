@@ -83,7 +83,18 @@ function addData() {
 }
 
 function loadCategories() {
-  
+  axios.get(
+    'http://localhost:3000/categories/get-category',
+    {
+      "user": {
+        "user_id": 1,
+      }
+    }
+  ).then(function(response) {
+    console.log(response);
+  }).catch(function(error){
+    console.log(error);
+  });
 }
 
 window.addEventListener(
