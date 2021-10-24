@@ -91,7 +91,12 @@ function loadCategories() {
       }
     }
   ).then(function(response) {
-    console.log(response);
+    const data = response.data.data;
+    const category = document.getElementById("category");
+
+    for(var i=0; i < data.length; i++) {
+      createAndAppendChild('select', category, {'value': data[i].id, 'innerHTML': data[i].name});
+    }
   }).catch(function(error){
     console.log(error);
   });
