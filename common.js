@@ -17,6 +17,16 @@ const createAndAppendChild = (elem, parent, optHash) => {
     parent.appendChild(item);
 }
 
+const deleteRow = (id) => {
+    const isNotDelete = !confirm('delete it?');
+    if(isNotDelete){ return }
+    const _rowIndex = document.getElementById(id).parentNode.parentNode.rowIndex;
+    const table = document.getElementById('data-table');
+    table.deleteRow(_rowIndex);
+  }
+
+
 module.exports = addEvent;
 module.exports = getUniqueString;
 module.exports = createAndAppendChild;
+module.exports = deleteRow;
