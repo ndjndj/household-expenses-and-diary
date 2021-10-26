@@ -75,7 +75,6 @@ function addData() {
   createAndAppendChild('input', cellDate, {'type': 'date', 'value': dateData.value});
   createAndAppendChild('input', cellItem, {'type': 'text', 'value': itemData.value});
   createAndAppendChild('input', cellAmount, {'type': 'number', 'value': amountData.value});
-
   cellCategory.innerHTML = categoryData.options[categoryData.selectedIndex].text;
 
   createDelButton(cellDelete);
