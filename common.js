@@ -23,10 +23,14 @@ const deleteRow = (id) => {
     const _rowIndex = document.getElementById(id).parentNode.parentNode.rowIndex;
     const table = document.getElementById('data-table');
     table.deleteRow(_rowIndex);
-  }
+ }
 
+ const checkValidation = (condition, validRetVal, errorRetVal) => {
+    return condition ? validRetVal : errorRetVal
+}
 
 module.exports = addEvent;
 module.exports = getUniqueString;
 module.exports = createAndAppendChild;
 module.exports = deleteRow;
+module.exports = checkValidation;
